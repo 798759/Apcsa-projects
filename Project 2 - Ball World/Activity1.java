@@ -5,7 +5,7 @@
  * @author (your name)
  * @version (a version number or a date)
  */
-public class BallRunner
+public class Activity1
 {
     public static void run()
     { 
@@ -25,13 +25,4 @@ public class BallRunner
                 }
         }
     }
-    public int findFreeBallBotIndex(BallBot[] ballbotArray){
-        int ballBotArray[];
-        ballBotArray= new ballBotArray[10];
-        for (w=0; w<ballBotArray.length; w++){
-            
-        }
-        return
 }
-}
-
