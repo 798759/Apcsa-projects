@@ -25,13 +25,44 @@ public class Activity2
         }
     }
     public int findFreeBallBotIndex(BallBot[] ballbotArray){
-        int ballBotArray[];
-        ballBotArray= new ballBotArray[10];
-        for (w=0; w<ballBotArray.length; w++){
+        for(int v =0; v<ballbotArray.length; v++){
+            if (ballbotArray[v]==null) return v;
+            
+    
+    }
+    return ballbotArray.length;
+}
+    public static void a2() {
+        Activity2 thisClass = new  Activity2();
+        int freeballBotArray[];
+        int freeBallBotIndex;
+        BallBot[] ballBotArray = new BallBot[100];
+        TGPoint findFreeBallBotIndex = new TGPoint();
+         BallWorld ballworld = new BallWorld(250,250);
+        TGPoint tgpoint = new TGPoint (0,0); 
+        BallBot ballbot = new BallBot (ballworld,tgpoint,0,10);
+        double x=0;
+        BallBot currBallBot;
+
+      
+        while (true){
+               if (thisClass.findFreeBallBotIndex(ballBotArray) < ballBotArray.length){
+            ballBotArray[thisClass.findFreeBallBotIndex(ballBotArray)]= new BallBot(ballworld,tgpoint,0,10);
+           
 
         }
-        return
+           for(int b =0; b<=thisClass.findFreeBallBotIndex(ballBotArray); b++) {
+           System.out.println("hi");
+           currBallBot = ballBotArray[b];
+           if (currBallBot.canMoveForward(ballworld)){
+                currBallBot.moveForward();
+            }else{
+                x = Math.random()*360;
+                currBallBot.setHeading(x);
+
+            }
     }
 }
+}}
 
 
