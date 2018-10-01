@@ -5,7 +5,7 @@
  * @author (your name)
  * @version (a version number or a date)
  */
-public class Activity2
+public class Activity3
 {
     public static void run()
     { 
@@ -34,7 +34,7 @@ public class Activity2
     }
 
     public static void a2() {
-        Activity2 thisClass = new  Activity2();
+        Activity3 thisClass = new  Activity3();
         int freeballBotArray[];
         int freeBallBotIndex;
         BallBot[] ballBotArray = new BallBot[10];
@@ -70,4 +70,3 @@ public class Activity2
         }
     }
 }
-

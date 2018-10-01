@@ -1,0 +1,10 @@
+#BlueJ class context
+comment0.target=Activity3
+comment0.text=\r\n\ Write\ a\ description\ of\ class\ Activity2\ here.\r\n\ changewsx\ dsahji\ grsgjn\ ejm'g;\ n'rkegn\ \r\n\ @author\ (your\ name)\r\n\ @version\ (a\ version\ number\ or\ a\ date)\r\n
+comment1.params=
+comment1.target=void\ run()
+comment2.params=ballbotArray
+comment2.target=int\ findFreeBallBotIndex(BallBot[])
+comment3.params=
+comment3.target=void\ a2()
+numComments=4
