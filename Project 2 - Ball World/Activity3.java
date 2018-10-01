@@ -33,6 +33,25 @@ public class Activity3
         return ballbotArray.length;
     }
 
+    public double distanceBetweenPoints(TGPoint point1, TGPoint point2){
+        return Math.sqrt((Math.pow(point1.x-point2.x,2))+(Math.pow(point1.y-point2.y,2)));
+    }
+
+    public boolean entranceClear(BallBot[] ballBotArray, TGPoint entrancePoint){
+         BallWorld ballworld = new BallWorld(250,250);
+        TGPoint tgpoint = new TGPoint (0,0); 
+        BallBot ballbot = new BallBot (ballworld,tgpoint,0,10);
+        for(int b =0; b<ballBotArray.length; b++){
+            if (!(ballBotArray[b]==null)){
+                if (ballbot.getPoint()> 2*ballbot.getRadius())
+                return false;
+            }else{
+                return true;
+        }
+        }
+    }
+    
+
     public static void a2() {
         Activity3 thisClass = new  Activity3();
         int freeballBotArray[];
@@ -41,7 +60,7 @@ public class Activity3
         TGPoint findFreeBallBotIndex = new TGPoint();
         BallWorld ballworld = new BallWorld(250,250);
         TGPoint tgpoint = new TGPoint (0,0); 
-        
+
         double x=0;
         BallBot currBallBot;
 
