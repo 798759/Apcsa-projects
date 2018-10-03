@@ -38,21 +38,19 @@ public class Activity3
     }
 
     public boolean entranceClear(BallBot[] ballBotArray, TGPoint entrancePoint){
-         BallWorld ballworld = new BallWorld(250,250);
-        TGPoint tgpoint = new TGPoint (0,0); 
-        BallBot ballbot = new BallBot (ballworld,tgpoint,0,10);
+
+       
         for(int b =0; b<ballBotArray.length; b++){
             if (!(ballBotArray[b]==null)){
-                if (ballbot.getPoint()> 2*ballbot.getRadius())
-                return false;
-            }else{
-                return true;
-        }
-        }
-    }
-    
+                BallBot ballBot = ballBotArray[b];
+                if (distanceBetweenPoints(entrancePoint, ballBot.getPoint()) < ballBot.getRadius() * 3) return false;
 
-    public static void a2() {
+            }
+        }
+        return true;
+    }
+
+    public static void a3() {
         Activity3 thisClass = new  Activity3();
         int freeballBotArray[];
         int freeBallBotIndex;
@@ -65,27 +63,24 @@ public class Activity3
         BallBot currBallBot;
 
         while (true){
-            if (thisClass.findFreeBallBotIndex(ballBotArray) < ballBotArray.length){
-                int freeballbotindex = thisClass.findFreeBallBotIndex(ballBotArray);
+            if ((thisClass.findFreeBallBotIndex(ballBotArray) < ballBotArray.length) && ((thisClass.entranceClear(ballBotArray, tgpoint)))){
+               // int freeballbotindex = thisClass.findFreeBallBotIndex(ballBotArray);
                 ballBotArray[thisClass.findFreeBallBotIndex(ballBotArray)]= new BallBot(ballworld,tgpoint,0,10);
-                System.out.println("what we care about: "+freeballbotindex);
 
             }
             for(int b =0; b<thisClass.findFreeBallBotIndex(ballBotArray); b++) {
                 //System.out.println("hi");
                 currBallBot = ballBotArray[b];
-                System.out.println(ballworld);
-                System.out.println("currBallBot: "+currBallBot);
-                if (!(currBallBot==null)){
-                    if  (currBallBot.canMoveForward(ballworld)){
-                        currBallBot.moveForward();
-                    }else{
-                        x = Math.random()*360;
-                        currBallBot.setHeading(x);
+                    if ((currBallBot!=null)){
+                        if  (currBallBot.canMoveForward(ballworld)){
+                            currBallBot.moveForward();
+                        }else{
+                            x = Math.random()*360;
+                            currBallBot.setHeading(x);
 
+                        }
                     }
                 }
             }
         }
     }
-}
