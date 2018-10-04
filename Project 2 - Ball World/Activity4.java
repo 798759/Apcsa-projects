@@ -1,11 +1,12 @@
 
+
 /**
  * Write a description of class Activity2 here.
  * changewsx dsahji grsgjn ejm'g; n'rkegn 
  * @author (your name)
  * @version (a version number or a date)
  */
-public class Activity3
+public class Activity4
 {
     public static void run()
     { 
@@ -81,6 +82,14 @@ public class Activity3
                         }
                     }
                 }
+            }
+        }
+      public BallBot ballBotToBounceOff(BallBot ballBot, BallBot[] ballBotArray){
+         TGPoint point = ballBot.getPoint();
+         TGPoint secondPoint = ballBot.forwardPoint();
+         Activity3 thisClass = new  Activity3();
+         for(int b =0; b<thisClass.findFreeBallBotIndex(ballBotArray); b++){
+             ballBot otherBallBot = ballBotArray[b];
             }
         }
     }
