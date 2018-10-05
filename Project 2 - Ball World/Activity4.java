@@ -50,16 +50,34 @@ public class Activity4
         }
         return true;
     }
-
+ public BallBot ballBotToBounceOff(BallBot ballBot, BallBot[] ballBotArray){
+         TGPoint point = ballBot.getPoint();
+         TGPoint secondPoint = ballBot.forwardPoint();
+         Activity3 thisClass = new  Activity3();
+         BallBot ret = null;
+         for(int b =0; b<ballBotArray.length; b++){
+             BallBot otherBallBot = ballBotArray[b];
+             if (otherBallBot!=null&&otherBallBot!=ballBot){
+                 double currentDistance = distanceBetweenPoints(ballBot.getPoint(), otherBallBot.getPoint());
+                 if (currentDistance <= (ballBot.getRadius()+otherBallBot.getRadius())){
+                     double nextDistance = distanceBetweenPoints(secondPoint, otherBallBot.getPoint());
+                     if ( nextDistance <= currentDistance){
+                         ret = otherBallBot;
+                        }
+                     
+                    }
+                }
+            }
+            return ret;
+        }
     public static void a3() {
-        Activity3 thisClass = new  Activity3();
         int freeballBotArray[];
         int freeBallBotIndex;
         BallBot[] ballBotArray = new BallBot[10];
         TGPoint findFreeBallBotIndex = new TGPoint();
         BallWorld ballworld = new BallWorld(250,250);
         TGPoint tgpoint = new TGPoint (0,0); 
-
+        Activity4 thisClass = new Activity4();
         double x=0;
         BallBot currBallBot;
 
@@ -74,7 +92,12 @@ public class Activity4
                 currBallBot = ballBotArray[b];
                     if ((currBallBot!=null)){// if a ballbot exists 
                         if  (currBallBot.canMoveForward(ballworld)){// if can move forward
+                            if (thisClass.ballBotToBounceOff(currBallBot, ballBotArray) == null){
                             currBallBot.moveForward();
+                            }else{
+                                x = Math.random()*360;// if cant change direction
+                            currBallBot.setHeading(x);
+                        }
                         }else{
                             x = Math.random()*360;// if cant change direction
                             currBallBot.setHeading(x);
@@ -84,12 +107,5 @@ public class Activity4
                 }
             }
         }
-      public BallBot ballBotToBounceOff(BallBot ballBot, BallBot[] ballBotArray){
-         TGPoint point = ballBot.getPoint();
-         TGPoint secondPoint = ballBot.forwardPoint();
-         Activity3 thisClass = new  Activity3();
-         for(int b =0; b<thisClass.findFreeBallBotIndex(ballBotArray); b++){
-             ballBot otherBallBot = ballBotArray[b];
-            }
-        }
+     
     }

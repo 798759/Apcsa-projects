@@ -1,6 +1,6 @@
 #BlueJ class context
 comment0.target=Activity4
-comment0.text=\n\ Write\ a\ description\ of\ class\ Activity2\ here.\n\ changewsx\ dsahji\ grsgjn\ ejm'g;\ n'rkegn\ \n\ @author\ (your\ name)\n\ @version\ (a\ version\ number\ or\ a\ date)\n
+comment0.text=\r\n\ Write\ a\ description\ of\ class\ Activity2\ here.\r\n\ changewsx\ dsahji\ grsgjn\ ejm'g;\ n'rkegn\ \r\n\ @author\ (your\ name)\r\n\ @version\ (a\ version\ number\ or\ a\ date)\r\n
 comment1.params=
 comment1.target=void\ run()
 comment2.params=ballbotArray
@@ -9,6 +9,8 @@ comment3.params=point1\ point2
 comment3.target=double\ distanceBetweenPoints(TGPoint,\ TGPoint)
 comment4.params=ballBotArray\ entrancePoint
 comment4.target=boolean\ entranceClear(BallBot[],\ TGPoint)
-comment5.params=
-comment5.target=void\ a3()
-numComments=6
+comment5.params=ballBot\ ballBotArray
+comment5.target=BallBot\ ballBotToBounceOff(BallBot,\ BallBot[])
+comment6.params=
+comment6.target=void\ a3()
+numComments=7
