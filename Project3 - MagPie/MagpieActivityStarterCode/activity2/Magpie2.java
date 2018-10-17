@@ -46,6 +46,36 @@ public class Magpie2
 		{
 			response = getRandomResponse();
 		}
+		if (statement.indexOf("Fortnite") >= 0)
+		{
+			response = "How many wins do you have?";
+		}
+		else if (statement.indexOf("Ninja") >= 0
+				|| statement.indexOf("Tfue") >= 0
+				|| statement.indexOf("Nick") >= 0
+				|| statement.indexOf("Ragepool") >= 0)
+		{
+			response = "What other streamers do you like";
+		}
+		else
+		{
+			response = getRandomResponse();
+		}
+		if (statement.indexOf("Purpose") >= 0)
+		{
+			response = "I am a living thing, what is my purpose?";
+		}
+		else if (statement.indexOf("you") >= 0
+				|| statement.indexOf("Not") >= 0
+				|| statement.indexOf("bad") >= 0
+				|| statement.indexOf("useless") >= 0)
+		{
+			response = "I have feelings";
+		}
+		else
+		{
+			response = getRandomResponse();
+		}
 		return response;
 	}
 
@@ -55,7 +85,7 @@ public class Magpie2
 	 */
 	private String getRandomResponse()
 	{
-		final int NUMBER_OF_RESPONSES = 4;
+		final int NUMBER_OF_RESPONSES = 8;
 		double r = Math.random();
 		int whichResponse = (int)(r * NUMBER_OF_RESPONSES);
 		String response = "";
@@ -66,7 +96,7 @@ public class Magpie2
 		}
 		else if (whichResponse == 1)
 		{
-			response = "Hmmm.";
+			response = "Hmmm?.";
 		}
 		else if (whichResponse == 2)
 		{
@@ -76,6 +106,17 @@ public class Magpie2
 		{
 			response = "You don't say.";
 		}
+		else if (whichResponse == 4)
+		{
+			response = "So Cool!!!!!.";
+		}
+		else if (whichResponse == 5)
+		{
+			response = "We Should Talk More?.";
+		}
+
+
+
 
 		return response;
 	}
