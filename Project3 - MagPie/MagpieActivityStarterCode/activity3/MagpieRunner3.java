@@ -1,3 +1,5 @@
+package activity3;
+
 import java.util.Scanner;
 
 /**
@@ -24,6 +26,7 @@ public class MagpieRunner3
 			System.out.println (maggie.getResponse(statement));
 			statement = in.nextLine();
 		}
+		
 	}
-
+	
 }
